@@ -1,0 +1,285 @@
+/* Change the accent colors for the "header" slide */
+:root {
+    --accent1: rgb(0,40,0);
+    --accent2: rgb(40,0,0);
+    --accent3: rgb(0,0,40);
+    --aws1: rgba(255,255,255,0.12);
+    --aws2: rgba(255,240,240,0.25);
+    --aws3: rgba(255,240,255,0.25);
+    --aws4: rgba(200,200,200,.7));
+}
+
+ body {
+     background: 0;
+     background-color: rgb(255,255,255);
+     font-size: 65%;
+ }
+
+ section > header.slide {
+     background-color: rgb(0,0,0);
+     background: url(../figs/neutronstar1.jpg);
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: center; 
+ }
+
+ .slide {
+     display: flex;
+     flex-flow: column;
+     align-items: center;
+     justify-content: center;
+     padding: 2.5rem;
+     background: radial-gradient(transparent,
+                                 rgba(200,200,200,.7)) var(--aws1);
+     color: black;
+ }
+
+ /* Trim the default Inspire.js margins */
+ .slide ul {
+     padding: 0;
+     /* This is required to leave enough space on the left for
+       the bullet */
+     margin-left: 2.0em;
+     margin-top: 0;
+     margin-right: 1.0em;
+     margin-bottom: 0;
+ }
+
+ .slide li {
+     margin-top: 0.8em;
+     margin-bottom: 0.8em;
+ }
+
+ .slide p {
+     padding:0;	
+     /* This is required to leave enough space on the left for
+       solitary paragraphs */
+     margin-left: 0.5em;
+     margin-top: 0.5em;
+     margin-right: 0;
+     margin-bottom: 0.5em;
+ }
+
+ .div_header {
+     position: absolute;
+     top: 0%;
+     left: 0%; 
+     width: 100%;
+     height: 7%;
+ }
+
+ .div_header2 {
+     position: absolute;
+     top: 0%;
+     left: 0%; 
+     width: 100%;
+     height: 12%;
+ }
+
+ .div_footer {
+     position: absolute;
+     top: 80%;
+     left: 0%; 
+     width: 100%;
+     height: 19%;
+ }
+
+ .div_left_panel {
+     position: absolute;
+     top: 7%;
+     left: 0%; 
+     width: 50%;
+     height: 93%;
+ }
+
+ .div_left_panel2 {
+     position: absolute;
+     top: 7%;
+     left: 0%; 
+     width: 50%;
+     height: 92%;
+ }
+
+ .div_main {
+     position: absolute;
+     top: 7%;
+     left: 0%; 
+     width: 100%;
+     height: 92%;
+ }
+
+ .div_main2 {
+     position: absolute;
+     top: 12%;
+     left: 0%; 
+     width: 100%;
+     height: 87%;
+ }
+
+ .div_right_panel {
+     position: absolute;
+     top: 7%;
+     left: 50%; 
+     width: 48%;
+     height: 93%;
+     vertical-align: middle;
+ }
+
+ .div_right_panel2 {
+     position: absolute;
+     top: 7%;
+     left: 50%; 
+     width: 48%;
+     height: 92%;
+     vertical-align: middle;
+ }
+
+ .img_class {
+     object-fit: scale-down;
+     display: block;
+     margin: auto;
+     padding: 0;
+     max-height: 80%;
+ }
+
+ .img_class2 {
+     object-fit: scale-down;
+     display: block;
+     margin: auto;
+     padding: 0;
+     max-height: 70%;
+ }
+
+ /* Set the H2 color */
+ .slide h2 {
+     color: rgb(110,110,200);
+     padding:0;	
+     margin:0;
+ }
+
+ /* Modify the font scaling 
+.slide * {
+    font-size: 100%;
+}
+*/
+
+ /* Remove Inspire.js default line separating table head and border */
+ .slide tbody tr > * {
+     border: 0;
+ }
+
+ .reference {
+     padding: 0;	
+     margin-left: 0.5em;
+     margin-top: 0.5em;
+     margin-right: 0;
+     margin-bottom: 0.5em;
+     font-size: 75%;
+     color: rgb(150,50,150);
+     font-weight: bold;
+ }
+
+ .creference {
+     text-align: center;
+     padding: 0;	
+     margin-left: 0.5em;
+     margin-top: 0.5em;
+     margin-right: 0;
+     margin-bottom: 0.5em;
+     font-size: 75%;
+     color: rgb(150,50,150);
+     font-weight: bold;
+ }
+
+ .utk {
+     color: rgb(255,130,0);
+ }
+
+ .highlight {
+     padding: 0;	
+     margin-left: 0.5em;
+     margin-top: 0.5em;
+     margin-right: 0;
+     margin-bottom: 0.5em;
+     color: rgb(220,150,150);
+ }
+
+ .big_highlight {
+     padding: 0;	
+     margin-left: 0.5em;
+     margin-top: 0.5em;
+     margin-right: 0;
+     margin-bottom: 0.5em;
+     color: rgb(220,150,150);
+     font-size: 200%;
+ }
+
+ .dkblue {
+     color: rgb(60,60,150);
+     font-weight: bold;
+ }
+
+ .center {
+     text-align: center;
+ }
+
+ .tiny {
+     font-size: 50%;
+ }
+
+ .small {
+     font-size: 80%;
+ }
+
+ .large {
+     font-size: 150%;
+ }
+
+ .smaller {
+     font-size: 65%;
+ }
+
+ .tight li {
+     margin-top: 0.0em;
+     margin-bottom: 0.0em;
+ }
+
+ .div_left_thin {
+     position: absolute;
+     top: 12%;
+     left: 0%; 
+     width: 35%;
+     height: 87%;
+ }
+
+ .div_right_wide {
+     position: absolute;
+     top: 12%;
+     left: 35%; 
+     width: 64%;
+     height: 87%;
+     vertical-align: middle;
+ }
+
+ /* Delayed items that are shown incrementally after the slide is */
+ @media screen {                                                         
+     .delayed,                                                        
+     .delayed-children > * {                                                 
+         opacity: 0;                                                   
+         transition-property: var(--transition-properties);            
+     }                                                            
+     
+     .delayed.displayed,                                                   
+     .delayed-children > .displayed {                                            
+         opacity: 1;                                                  
+     }                                                            
+     
+     .delayed.current,                                                    
+     .delayed-children > .current,                                              
+     .delayed.displayed.persistent,                                             
+     .delayed-children > .displayed.persistent,                         
+     .delayed-children.persistent > .displayed {                        
+         opacity: 1;                                                   
+         transition-duration: var(--transition-duration);            
+     }                                                            
+ }                     
