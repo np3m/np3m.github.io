@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chemical Potentials &#8212; eos  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Variable Transformations" href="trans.html" />
+    <link rel="prev" title="Rest mass contribution" href="rest_mass.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="chemical-potentials">
+<h1>Chemical Potentials<a class="headerlink" href="#chemical-potentials" title="Link to this heading">¶</a></h1>
+<p>Denote the number density of neutrons in the low-density phase
+<span class="math notranslate nohighlight">\(n_n\)</span>, the number density of protons in the low-density phase
+<span class="math notranslate nohighlight">\(n_p\)</span>, the number density of electrons <span class="math notranslate nohighlight">\(n_e\)</span>, and the
+number density of nuclei as <span class="math notranslate nohighlight">\(\{n_i\}\)</span>. Denote the total number
+of neutrons and protons in both phases as <span class="math notranslate nohighlight">\(\bar{n}_n\)</span> and
+<span class="math notranslate nohighlight">\(\bar{n}_p\)</span>. Using these definitions, one can write the free
+energy for hot and dense matter in (at least) four different ways,
+<span class="math notranslate nohighlight">\(f_1(\bar{n}_n,\bar{n}_p,T)\)</span>,
+<span class="math notranslate nohighlight">\(f_2(\bar{n}_n,\bar{n}_p,n_e,T)\)</span>,
+<span class="math notranslate nohighlight">\(f_3(n_n,n_p,\{n_i\},T)\)</span>, <span class="math notranslate nohighlight">\(f_4(n_n,n_p,\{n_i\},n_e,T)\)</span>. In
+the first form, the Saha equations have been solved to determine
+<span class="math notranslate nohighlight">\(\{n_i\}\)</span> and charge neutrality has been used to determine
+<span class="math notranslate nohighlight">\(n_e\)</span>. In the second form, the Saha equations have been solved
+but charge neutrality has not been used. In the third form, the Saha
+equations have not been solved but charge neutrality has been used.
+The electron contribution to the free energy is included in all four
+free energies, but in the case of <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_3\)</span>, the
+electron density is not independent of the other densities. For these
+four free energies, there are four corresponding proton chemical
+potentials, <span class="math notranslate nohighlight">\(\partial f_1/\partial \bar{n}_p\)</span>, <span class="math notranslate nohighlight">\(\partial
+f_2/\partial \bar{n}_p\)</span>, <span class="math notranslate nohighlight">\(\partial f_3/\partial n_p\)</span>, and
+<span class="math notranslate nohighlight">\(\partial f_4/\partial n_p\)</span>. <em>None of these four proton chemical
+potentials are the same.</em> This documentation attempts to explain how
+this complication relates to the code. In Du et al. (2022), we use a
+confusing notation because we do not clearly distinguish
+<span class="math notranslate nohighlight">\(\bar{n}_n\)</span> and <span class="math notranslate nohighlight">\(n_n\)</span>. The function <span class="math notranslate nohighlight">\(f_1\)</span> is most
+directly related to the tables which are generated and one can simply
+identify <span class="math notranslate nohighlight">\(\bar{n}_n=n_B(1-Y_e)\)</span> and <span class="math notranslate nohighlight">\(\bar{n}_p=n_B Y_e\)</span>.</p>
+<p>The comparison between <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_2\)</span> is the simplest
+(now being a bit more careful about what is held constant)</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{\partial f_1}{\partial \bar{n}_n}\right)_{\bar{n}_p,T} =
+\left(\frac{\partial f_2}{\partial \bar{n}_n}\right)_{\bar{n}_p,n_e,T}
+\quad \mathrm{and} \quad
+\left(\frac{\partial f_1}{\partial \bar{n}_p}\right)_{\bar{n}_n,T} =
+\left(\frac{\partial f_2}{\partial
+\bar{n}_p}\right)_{\bar{n}_n,n_e,T} +
+\left(\frac{\partial f_2}{\partial
+n_e}\right)_{\bar{n}_n,\bar{n}_p,T}\]</div>
+<p>To simplify the discussion we use the following notation:</p>
+<div class="math notranslate nohighlight">
+\[\mu_{p,i} \equiv \left( \frac{\partial f_i}{\partial \bar{n}_p}
+\right)\]</div>
+<p>where all of the other densities are held constant, including either
+<span class="math notranslate nohighlight">\(n_n\)</span> or <span class="math notranslate nohighlight">\(\bar{n}_n\)</span> as appropriate. Thus <span class="math notranslate nohighlight">\(f_1\)</span> and
+<span class="math notranslate nohighlight">\(f_2\)</span> imply two thermodynamic identies</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\varepsilon_1 &amp;=&amp; - P_1 + T s_1 + \bar{n}_n \mu_{n,1} +
+\bar{n}_p \mu_{p,1} \nonumber \\
+\varepsilon_2 &amp;=&amp; - P_2 + T s_2 + \bar{n}_n \mu_{n,2} +
+\bar{n}_p \mu_{p,2} + n_e \mu_e\end{split}\]</div>
+<p>When <span class="math notranslate nohighlight">\(n_e=\bar{n}_p\)</span>, we have <span class="math notranslate nohighlight">\(P_1=P_2\)</span>,
+<span class="math notranslate nohighlight">\(\varepsilon_1=\varepsilon_2\)</span>, and <span class="math notranslate nohighlight">\(s_1=s_2\)</span>. In the EOS
+literature, it has become standard to store <span class="math notranslate nohighlight">\(\mu_{n,2}\)</span> and
+refer to it as the “neutron chemical potential” and refer to
+<span class="math notranslate nohighlight">\(\mu_{p,2}\)</span> as the “proton chemical potential” even though
+charge neutrality has been assumed so the electron density is not
+independent. The tables generated at this website use the same
+notation.</p>
+<p>The distinction between <span class="math notranslate nohighlight">\(\mu_{n,1}\)</span> and <span class="math notranslate nohighlight">\(\mu_{n,3}\)</span> is
+more complicated, see Eq. 36 of Du et al. (2022).</p>
+<p>The neutron fraction <code class="docutils literal notranslate"><span class="pre">Xn</span></code> stored in the
+table refers only to neutrons <em>outside</em> of nuclei, i.e. <span class="math notranslate nohighlight">\(X_n
+\equiv n_n/n_B \neq \bar{n}_n/n_B\)</span>.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chemical Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cs2.html">Speed of sound in a multicomponent system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting with o2graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">EOS with Docker</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="rest_mass.html" title="previous chapter">Rest mass contribution</a></li>
+      <li>Next: <a href="trans.html" title="next chapter">Variable Transformations</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2017-2023, Xingfu Du and Andrew W. Steiner.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/chem_pot.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

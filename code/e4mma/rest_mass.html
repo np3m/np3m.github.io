@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rest mass contribution &#8212; eos  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chemical Potentials" href="chem_pot.html" />
+    <link rel="prev" title="Todo List" href="todos.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="rest-mass-contribution">
+<h1>Rest mass contribution<a class="headerlink" href="#rest-mass-contribution" title="Link to this heading">¶</a></h1>
+<p>The Helmholtz free energy of homogeneous nucleonic matter is denoted
+<span class="math notranslate nohighlight">\(f_{\mathrm{Hom}}(n_n^{\prime},n_p^{\prime},T)\)</span> in Du et
+al. (2022) where the primes refer to the local nucleonic densities in
+the gaseous or low-density phase. The rest mass energy density
+corresponding to this part of the full free energy density is then
+<span class="math notranslate nohighlight">\(m_n n_n^{\prime} + m_p n_p^{\prime}\)</span>. The rest mass energy
+density is also omitted from the free energy density of nuclei,
+referred to in Du et al. (2022) as <span class="math notranslate nohighlight">\(\sum_i f_i\)</span>. The rest mass
+energy density associated with the nuclear contribution is then
+<span class="math notranslate nohighlight">\(\sum_i N_i n_i m_n + \sum_i Z_i n_i m_p\)</span>. Multiplying
+<span class="math notranslate nohighlight">\(f_{\mathrm{Hom}}\)</span> by <span class="math notranslate nohighlight">\(\xi\)</span> and then combining these two
+contributions to the free energy, we find that the total rest mass
+energy density (which is not included in the published tables) is:</p>
+<div class="math notranslate nohighlight">
+\[f_{\mathrm{rest}} \equiv \xi n_n^{\prime} m_n + n_p^{\prime} \xi m_p +
+\sum_i N_i n_i m_n + \sum_i Z_i n_i m_p\]</div>
+<p>then by Eq. 2 in Du et al. (2022) this is equal to</p>
+<div class="math notranslate nohighlight">
+\[f_{\mathrm{rest}} = n_B (1-Y_e) m_n + n_B Y_e m_p \, .\]</div>
+<p>Dividing this by <span class="math notranslate nohighlight">\(n_B\)</span> gives the contribution which has
+been subtracted from <code class="docutils literal notranslate"><span class="pre">Fint</span></code> as described in <a class="reference internal" href="table_format.html#table-format"><span class="std std-ref">Table Format</span></a>.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo List</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Rest mass contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cs2.html">Speed of sound in a multicomponent system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting with o2graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">EOS with Docker</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="todos.html" title="previous chapter">Todo List</a></li>
+      <li>Next: <a href="chem_pot.html" title="next chapter">Chemical Potentials</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2017-2023, Xingfu Du and Andrew W. Steiner.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/rest_mass.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
