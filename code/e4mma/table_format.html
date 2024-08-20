@@ -7,7 +7,8 @@
 
     <title>Table Format &#8212; eos  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -36,7 +37,7 @@
   <section id="table-format">
 <h1>Table Format<a class="headerlink" href="#table-format" title="Link to this heading">¶</a></h1>
 <p>The table is an HDF5 file and the datasets are given below. Several
-quantities are stored in <a class="reference external" href="https://neutronstars.utk.edu/code/o2scl/html/class/tensor_grid.html#tensor-grid" title="(in o2scl v0.930a1)"><span>tensor_grid</span></a> objects, which are
+quantities are stored in <span class="xref std std-ref">o2scl:tensor_grid</span> objects, which are
 stored as HDF5 groups with the name of the group given below. The
 contents of the rank 3 tensor are stored in the dataset named data in
 each group.</p>
@@ -82,7 +83,7 @@ compute the table</p></li>
 </section>
 <section id="quantities-for-the-solver">
 <h2>Quantities for the solver<a class="headerlink" href="#quantities-for-the-solver" title="Link to this heading">¶</a></h2>
-<p>These are all <a class="reference external" href="https://neutronstars.utk.edu/code/o2scl/html/class/tensor_grid.html#tensor-grid" title="(in o2scl v0.930a1)"><span>tensor_grid</span></a> objects. The contents of the
+<p>These are all <span class="xref std std-ref">o2scl:tensor_grid</span> objects. The contents of the
 tensor are stored in an HDF5 dataset named “data” in row-major
 order (the first index is the baryon density, the second is the
 electron fraction, and the third is the temperature).</p>
@@ -115,7 +116,7 @@ distribution, not including n, p, d, t, <span class="math notranslate nohighligh
 </section>
 <section id="composition">
 <h2>Composition<a class="headerlink" href="#composition" title="Link to this heading">¶</a></h2>
-<p>These are all <a class="reference external" href="https://neutronstars.utk.edu/code/o2scl/html/class/tensor_grid.html#tensor-grid" title="(in o2scl v0.930a1)"><span>tensor_grid</span></a> objects and included for
+<p>These are all <span class="xref std std-ref">o2scl:tensor_grid</span> objects and included for
 all tables.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Xn</span></code>: the baryon number fraction of neutrons (this includes only
@@ -143,7 +144,7 @@ present, <span class="math notranslate nohighlight">\(\xi=1\)</span>.</p>
 <section id="thermodynamic-quantities">
 <h2>Thermodynamic quantities<a class="headerlink" href="#thermodynamic-quantities" title="Link to this heading">¶</a></h2>
 <p>In this section, all quantities are stored as
-<a class="reference external" href="https://neutronstars.utk.edu/code/o2scl/html/class/tensor_grid.html#tensor-grid" title="(in o2scl v0.930a1)"><span>tensor_grid</span></a> objects.</p>
+<span class="xref std std-ref">o2scl:tensor_grid</span> objects.</p>
 <p>Three quantities are included for all tables:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Fint</span></code>: the baryon part of the free energy per baryon
@@ -214,7 +215,7 @@ any units. The unsigned integer <code class="docutils literal notranslate"><span
 </section>
 <section id="electron-and-photon-table">
 <h2>Electron and photon table<a class="headerlink" href="#electron-and-photon-table" title="Link to this heading">¶</a></h2>
-<p>The electron and photon table, contains five <a class="reference external" href="https://neutronstars.utk.edu/code/o2scl/html/class/tensor_grid.html#tensor-grid" title="(in o2scl v0.930a1)"><span>tensor_grid</span></a>
+<p>The electron and photon table, contains five <span class="xref std std-ref">o2scl:tensor_grid</span>
 objects which includes electrons, positrons, and photons,</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: the free energy per baryon
@@ -230,7 +231,7 @@ objects which includes electrons, positrons, and photons,</p>
 </section>
 <section id="nuclear-masses-table">
 <h2>Nuclear masses table<a class="headerlink" href="#nuclear-masses-table" title="Link to this heading">¶</a></h2>
-<p>The nuclear massses table, contains a <a class="reference external" href="https://neutronstars.utk.edu/code/o2scl/html/class/table.html#table" title="(in o2scl v0.930a1)"><span>table</span></a>
+<p>The nuclear massses table, contains a <span class="xref std std-ref">o2scl:table</span>
 object with the columns</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Z</span></code>: the proton number,</p></li>
@@ -257,7 +258,7 @@ for Jth from HFB fit, 4 for simple ansatz.</p></li>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
@@ -311,8 +312,8 @@ for Jth from HFB fit, 4 for simple ansatz.</p></li>
       &#169;2017-2024, Xingfu Du, Zidu Lin, Satyajit Roy, Josue Bautista, and Andrew W. Steiner.
       
       |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
       <a href="_sources/table_format.rst.txt"
