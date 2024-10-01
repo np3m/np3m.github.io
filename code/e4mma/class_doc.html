@@ -137,13 +137,13 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos5eos_SE">
 <span id="_CPPv3N3eos5eos_SE"></span><span id="_CPPv2N3eos5eos_SE"></span><span id="eos::eos_S__double"></span><span class="target" id="classeos_1af00734826d37d4e2b40de82cffebc842"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">eos_S</span></span></span><a class="headerlink" href="#_CPPv4N3eos5eos_SE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The symmetry energy. </p>
+<dd><p>The symmetry energy in <span class="math notranslate nohighlight">\( \mathrm{MeV} \)</span>. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos5eos_LE">
 <span id="_CPPv3N3eos5eos_LE"></span><span id="_CPPv2N3eos5eos_LE"></span><span id="eos::eos_L__double"></span><span class="target" id="classeos_1a4189930e80f2c9c6400fe4c35faa4646"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">eos_L</span></span></span><a class="headerlink" href="#_CPPv4N3eos5eos_LE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The slope of the symmetry energy. </p>
+<dd><p>The slope of the symmetry energy in <span class="math notranslate nohighlight">\( \mathrm{MeV} \)</span>. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -171,7 +171,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3eos10nstar_highE">
 <span id="_CPPv3N3eos10nstar_highE"></span><span id="_CPPv2N3eos10nstar_highE"></span><span id="eos::nstar_high__o2scl::table_units"></span><span class="target" id="classeos_1a1c01578a14c275ee7f32cd0cd069e9d9"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">table_units</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nstar_high</span></span></span><a class="headerlink" href="#_CPPv4N3eos10nstar_highE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Table for the high-density neutron matter EOS, which comes from the neutron star observations. </p>
-<p>This object is set in <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a>, which is called by <a class="reference internal" href="#classeos_1aa6e242360755e084e3845f8ad7ca5034"><span class="std std-ref">select_internal()</span></a>.</p>
+<p>This object is set in <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a>, which is called by <a class="reference internal" href="#classeos_1ad04fd554e7b636c75c0804cb775130c6"><span class="std std-ref">select_seven()</span></a>.</p>
 <p>The original posteriors are in columns “nb” and “EoA”. The column “Eerr” contains the uncertainties for the fit. The fit is stored in the columns “EoA_fit”, “ed_fit”, “mu_fit”, and “cs2_fit”. The columns “ed_fit” and “mu_fit” both include the rest mass contribution. The columns “ed”, “mu”, “dmudn” and “cs2” are computed directly from the original posteriors. Again, the columns “ed” and “mu” both include the rest mass contribution.</p>
 <p>The maximum baryon density in this table is the value “nb_max”, as obtained from the original posterior data value. </p>
 </dd></dl>
@@ -246,17 +246,21 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos10nuc_nb_maxE">
 <span id="_CPPv3N3eos10nuc_nb_maxE"></span><span id="_CPPv2N3eos10nuc_nb_maxE"></span><span id="eos::nuc_nb_max__double"></span><span class="target" id="classeos_1a4190f980f46f5ba402b7484297b04805"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuc_nb_max</span></span></span><a class="headerlink" href="#_CPPv4N3eos10nuc_nb_maxE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>The maximum baryon density at which the nuclear matter EOS is causal. </p>
+<p>This quantity is determined by <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a></p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos10e_nuc_lastE">
 <span id="_CPPv3N3eos10e_nuc_lastE"></span><span id="_CPPv2N3eos10e_nuc_lastE"></span><span id="eos::e_nuc_last__double"></span><span class="target" id="classeos_1a0ccce21bf0639b074002c0f05a1f3023"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">e_nuc_last</span></span></span><a class="headerlink" href="#_CPPv4N3eos10e_nuc_lastE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>The last energy density at which nuclear matter is causal. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos10p_nuc_lastE">
 <span id="_CPPv3N3eos10p_nuc_lastE"></span><span id="_CPPv2N3eos10p_nuc_lastE"></span><span id="eos::p_nuc_last__double"></span><span class="target" id="classeos_1add78579a3ffb7fa11eb0c770fda7567c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nuc_last</span></span></span><a class="headerlink" href="#_CPPv4N3eos10p_nuc_lastE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>The last pressure at which nuclear matter is causal. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos17energy_density_nsEd">
@@ -519,7 +523,7 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos15select_cs2_testE">
 <span id="_CPPv3N3eos15select_cs2_testE"></span><span id="_CPPv2N3eos15select_cs2_testE"></span><span id="eos::select_cs2_test__b"></span><span class="target" id="classeos_1a2d54b943239f6dc81e07efdfd8b3e945"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_cs2_test</span></span></span><a class="headerlink" href="#_CPPv4N3eos15select_cs2_testE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>If true, test cs2 in the <a class="reference internal" href="#classeos_1aa6e242360755e084e3845f8ad7ca5034"><span class="std std-ref">select_internal()</span></a> function (default true) </p>
+<dd><p>If true, test cs2 in the <a class="reference internal" href="#classeos_1ad04fd554e7b636c75c0804cb775130c6"><span class="std std-ref">select_seven()</span></a> function (default true) </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -636,19 +640,20 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos7eos_EoAE">
 <span id="_CPPv3N3eos7eos_EoAE"></span><span id="_CPPv2N3eos7eos_EoAE"></span><span id="eos::eos_EoA__double"></span><span class="target" id="classeos_1a01e4cfdcfa60927e73089f6bf586ff14"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">eos_EoA</span></span></span><a class="headerlink" href="#_CPPv4N3eos7eos_EoAE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The binding energy per particle. </p>
+<dd><p>The binding energy per particle in <span class="math notranslate nohighlight">\( \mathrm{MeV} \)</span> (with the minus sign, typically about -16) </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos5eos_KE">
 <span id="_CPPv3N3eos5eos_KE"></span><span id="_CPPv2N3eos5eos_KE"></span><span id="eos::eos_K__double"></span><span class="target" id="classeos_1aa5d6c808833673220aed207a40dfe5fd"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">eos_K</span></span></span><a class="headerlink" href="#_CPPv4N3eos5eos_KE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The incompressibility. </p>
+<dd><p>The incompressibility in <span class="math notranslate nohighlight">\( \mathrm{MeV} \)</span>. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos6eos_n0E">
 <span id="_CPPv3N3eos6eos_n0E"></span><span id="_CPPv2N3eos6eos_n0E"></span><span id="eos::eos_n0__double"></span><span class="target" id="classeos_1a7b0ce0f801d0318e5804d2b2daaab6cb"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">eos_n0</span></span></span><a class="headerlink" href="#_CPPv4N3eos6eos_n0E" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The saturation density. </p>
+<dd><p>The saturation density in <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{-3} \)</span>. </p>
+<p>Not necessarily equal to <code class="docutils literal notranslate"><span class="pre">sk.n0</span></code> or <a class="reference internal" href="#classeos_1ad656a3078814fbeceb967e6d43f08bfa"><span class="std std-ref">qmc_n0</span></a>. </p>
 </dd></dl>
 
 </div>
@@ -771,9 +776,21 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos15select_internalEiiddddd">
-<span id="_CPPv3N3eos15select_internalEiiddddd"></span><span id="_CPPv2N3eos15select_internalEiiddddd"></span><span id="eos::select_internal__i.i.double.double.double.double.double"></span><span class="target" id="classeos_1aa6e242360755e084e3845f8ad7ca5034"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_internal</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i_ns_loc</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i_skyrme_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qmc_alpha_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qmc_a_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eos_L_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eos_S_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">phi_loc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos15select_internalEiiddddd" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Internal select function. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N3eos11select_fullERNSt6vectorINSt6stringEEEb">
+<span id="_CPPv3N3eos11select_fullERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos11select_fullERNSt6vectorINSt6stringEEEb"></span><span id="eos::select_full__std::vector:ss:R.b"></span><span class="target" id="classeos_1a76627b764f1a9b5c1b443efb62d6cab8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_full</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos11select_fullERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Experimental select function for all parameters. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos12select_sevenEiiddddd">
+<span id="_CPPv3N3eos12select_sevenEiiddddd"></span><span id="_CPPv2N3eos12select_sevenEiiddddd"></span><span id="eos::select_seven__i.i.double.double.double.double.double"></span><span class="target" id="classeos_1ad04fd554e7b636c75c0804cb775130c6"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_seven</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i_ns_loc</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i_skyrme_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qmc_alpha_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qmc_a_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eos_L_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">eos_S_loc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">phi_loc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos12select_sevenEiiddddd" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Select a model based on the seven Du et al. (2019) parameters. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos13select_commonEv">
+<span id="_CPPv3N3eos13select_commonEv"></span><span id="_CPPv2N3eos13select_commonEv"></span><span id="eos::select_common"></span><span class="target" id="classeos_1ab7a1f37b41c15d9c9f6e42ab289f7280"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_common</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos13select_commonEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Common select function. </p>
 </dd></dl>
 
 </div>
@@ -833,6 +850,14 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos4mvsrERNSt6vectorINSt6stringEEEb">
+<span id="_CPPv3N3eos4mvsrERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos4mvsrERNSt6vectorINSt6stringEEEb"></span><span id="eos::mvsr__std::vector:ss:R.b"></span><span class="target" id="classeos_1ad07e7a7c1fcd6298b5a85877d32b1b8c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mvsr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos4mvsrERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Construct the PNS EOS and the M-R curve. </p>
+<p>&lt;entropy per baryon&gt; &lt;lepton fraction&gt; &lt;output filename&gt;</p>
+<p>Use YL=0 for beta equilibrium. Currently always uses a cold crust. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos10table_fullERNSt6vectorINSt6stringEEEb">
 <span id="_CPPv3N3eos10table_fullERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos10table_fullERNSt6vectorINSt6stringEEEb"></span><span id="eos::table_full__std::vector:ss:R.b"></span><span class="target" id="classeos_1a8747580da79f5b7a67c2d398fc92da9a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">table_full</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos10table_fullERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Construct a full 3D EOS table without nuclei. </p>
@@ -860,7 +885,8 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3eos12select_modelERNSt6vectorINSt6stringEEEb">
 <span id="_CPPv3N3eos12select_modelERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos12select_modelERNSt6vectorINSt6stringEEEb"></span><span id="eos::select_model__std::vector:ss:R.b"></span><span class="target" id="classeos_1aa3bc65fa01f0eb33e795b5f2fe0c7d21"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_model</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos12select_modelERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Select an EOS model. </p>
-<p>&lt;i_ns&gt; &lt;i_skyrme&gt; &lt;alpha&gt;  &lt;L&gt; </p>
+<p>&lt;i_ns&gt; &lt;i_skyrme&gt; &lt;alpha&gt; &lt;qmc a&gt; &lt;nuclear L&gt; &lt;nuclear S&gt; &lt;phi&gt;</p>
+<p>Select an EOS model given the 7 specified parameters. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -964,7 +990,7 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos8comm_setERNSt6vectorINSt6stringEEEb">
 <span id="_CPPv3N3eos8comm_setERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos8comm_setERNSt6vectorINSt6stringEEEb"></span><span id="eos::comm_set__std::vector:ss:R.b"></span><span class="target" id="classeos_1af47b4ee83e3ef0f473634a7fd7e74358"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">comm_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos8comm_setERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Desc. </p>
+<dd><p>Wrapper for the set function which ensures grid spec is updated. </p>
 </dd></dl>
 
 </div>
@@ -974,10 +1000,6 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3eos11calc_temp_eERN5o2scl7fermionERN5o2scl7fermionEdRN5o2scl6thermoE">
 <span id="_CPPv3N3eos11calc_temp_eERN5o2scl7fermionERN5o2scl7fermionEdRN5o2scl6thermoE"></span><span id="_CPPv2N3eos11calc_temp_eERN5o2scl7fermionERN5o2scl7fermionEdRN5o2scl6thermoE"></span><span id="eos::calc_temp_e__o2scl::fermionR.o2scl::fermionR.double.o2scl::thermoR"></span><span class="target" id="classeos_1a7dba9e6f65c7471b2fe448d181e9e8b6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calc_temp_e</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">fermion</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">n</span></span>, <span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">fermion</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">T</span></span>, <span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">thermo</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">th</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos11calc_temp_eERN5o2scl7fermionERN5o2scl7fermionEdRN5o2scl6thermoE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The parent virtual method. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This function is currently empty but could be replaced in an updated version to work better with O2scl. </p>
-</div>
 </dd></dl>
 
 </div>
@@ -1427,6 +1449,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="download.html">Tables to Download</a></li>
 <li class="toctree-l1"><a class="reference internal" href="table_format.html">Table Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Other Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#class-eos">Class eos</a></li>
