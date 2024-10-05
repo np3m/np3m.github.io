@@ -37,10 +37,10 @@
 <h1>Using Docker<a class="headerlink" href="#using-docker" title="Link to this heading">¶</a></h1>
 <p>Docker images are periodically updated which contain a working version
 of the code and examples. These images are large, but they contain a
-full version of e4mma together with O2scl, O2sclpy, and Jupyter. To
+full version of E4MMA together with O2scl, O2sclpy, and Jupyter. TO
 use the images (available at
 <a class="reference external" href="https://hub.docker.com/repository/docker/awsteiner/e4mma/general">https://hub.docker.com/repository/docker/awsteiner/e4mma/general</a>),
-just use, for example:</p>
+you can try:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo docker pull awsteiner/e4mma:alpha5_ju_o930a4_u24.04
 sudo docker run -p 8888:8888 -it `sudo docker images | \
   grep &quot;alpha5_ju_o930a4_u24.04&quot; | awk &#39;{print $3}&#39;`

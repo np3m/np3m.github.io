@@ -37,29 +37,89 @@
 <h1>Python/Jupyter Examples<a class="headerlink" href="#python-jupyter-examples" title="Link to this heading">¶</a></h1>
 <section id="reading-a-table-and-plotting-with-h5py-matplotlib">
 <h2>Reading a table and plotting with h5py/matplotlib<a class="headerlink" href="#reading-a-table-and-plotting-with-h5py-matplotlib" title="Link to this heading">¶</a></h2>
-<p>Taken from <code class="docutils literal notranslate"><span class="pre">python/A_point_nuc.scr</span></code>.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># ----------------------------------------------------------------</span>
-<span class="cp"># Evaluate the EOS (with nuclei) at a particular point.</span>
-<span class="cp"># Note that the code needs to be read a few data files so we begin</span>
-<span class="cp"># by setting the &quot;data_dir&quot; parameter.</span>
-<span class="cp"># ----------------------------------------------------------------</span>
+<p>See also the Jupyter notebook at
+<a class="reference external" href="https://github.com/np3m/e4mma/blob/andrew/python/A_plot_h5py.ipynb">https://github.com/np3m/e4mma/blob/andrew/python/A_plot_h5py.ipynb</a> .</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># # E4MMA - Plotting with h5py and matplotlib</span>
 
-<span class="cp"># This is the &quot;fiducial&quot; model from Du et al. (2022)</span>
+<span class="c1"># +</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
 
-<span class="p">..</span><span class="o">/</span><span class="n">eos_nuclei</span><span class="w"> </span><span class="o">-</span><span class="n">set</span><span class="w"> </span><span class="n">data_dir</span><span class="w"> </span><span class="s">&quot;../data&quot;</span><span class="w"> </span>\
-<span class="o">-</span><span class="n">select</span><span class="o">-</span><span class="n">model</span><span class="w"> </span><span class="mi">470</span><span class="w"> </span><span class="mi">738</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">13.0</span><span class="w"> </span><span class="mf">62.4</span><span class="w"> </span><span class="mf">32.8</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span>\
-<span class="o">-</span><span class="n">set</span><span class="w"> </span><span class="n">include_detail</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>\
-<span class="o">-</span><span class="n">point</span><span class="o">-</span><span class="n">nuclei</span><span class="w"> </span><span class="mf">0.08</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">5.0</span>
+<span class="n">plots</span><span class="o">=</span><span class="kc">True</span>
+<span class="k">if</span> <span class="s1">&#39;pytest&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="n">plots</span><span class="o">=</span><span class="kc">False</span>
+<span class="c1"># -</span>
 
-<span class="cp"># Pure Skyrme model</span>
+<span class="c1"># Download a precomputed table. The file is compared with the SHA256</span>
+<span class="c1"># hash and only downloaded if the current file doesn&#39;t match the hash.</span>
+<span class="c1"># The &#39;acol&#39; command is part of O2scl (one of the e4mma dependencies).</span>
+<span class="c1"># Instead of acol, you can just use, e.g. &#39;curl&#39; to download the file</span>
+<span class="c1"># and &#39;openssl dgst -sha256&#39; to obtain the hash.</span>
 
-<span class="p">..</span><span class="o">/</span><span class="n">eos_nuclei</span><span class="w"> </span><span class="o">-</span><span class="n">set</span><span class="w"> </span><span class="n">data_dir</span><span class="w"> </span><span class="s">&quot;../data&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">alt</span><span class="o">-</span><span class="n">model</span><span class="w"> </span><span class="n">Skyrme</span><span class="w"> </span><span class="n">NRAPR</span><span class="w"> </span>\
-<span class="o">-</span><span class="n">point</span><span class="o">-</span><span class="n">nuclei</span><span class="w"> </span><span class="mf">0.08</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">5.0</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">((</span><span class="s1">&#39;acol -download ../output/fid_3_5_22.o2 &#39;</span><span class="o">+</span>
+           <span class="s1">&#39;https://isospin.roam.utk.edu/public_data/&#39;</span><span class="o">+</span>
+           <span class="s1">&#39;eos_tables/du21/fid_3_5_22.o2 840f6f171f05081d&#39;</span><span class="o">+</span>
+           <span class="s1">&#39;eed53fd8bf50bad1b16a865418c37b1b630817ae10ad6736&#39;</span><span class="p">))</span>
 
-<span class="cp"># RMF support is still experimental</span>
+<span class="c1"># Use h5py to read the table</span>
 
-<span class="p">..</span><span class="o">/</span><span class="n">eos_nuclei</span><span class="w"> </span><span class="o">-</span><span class="n">set</span><span class="w"> </span><span class="n">data_dir</span><span class="w"> </span><span class="s">&quot;../data&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">alt</span><span class="o">-</span><span class="n">model</span><span class="w"> </span><span class="n">RMF</span><span class="w"> </span><span class="n">SFHo</span><span class="w"> </span>\
-<span class="o">-</span><span class="n">point</span><span class="o">-</span><span class="n">nuclei</span><span class="w"> </span><span class="mf">0.08</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">5.0</span>
+<span class="n">f</span><span class="o">=</span><span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;../output/fid_3_5_22.o2&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read the grid</span>
+
+<span class="n">n_nB</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;n_nB&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">n_Ye</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;n_Ye&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">n_T</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;n_T&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">nB_grid</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;nB_grid&quot;</span><span class="p">]</span>
+<span class="n">Ye_grid</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;Ye_grid&quot;</span><span class="p">]</span>
+<span class="n">T_grid</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;T_grid&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n_nB,n_Ye,n_T:&#39;</span><span class="p">,</span><span class="n">n_nB</span><span class="p">,</span><span class="n">n_Ye</span><span class="p">,</span><span class="n">n_T</span><span class="p">)</span>
+
+<span class="c1"># Read the data on the average nuclear mass number and reshape for</span>
+<span class="c1"># convenience</span>
+
+<span class="n">A</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;A/data&quot;</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,(</span><span class="n">n_nB</span><span class="p">,</span><span class="n">n_Ye</span><span class="p">,</span><span class="n">n_T</span><span class="p">))</span>
+
+<span class="c1"># When the grids are sorted, we can use numpy&#39;s searchsorted() function for</span>
+<span class="c1"># a fast way of mapping values to indices. This is the average nuclear</span>
+<span class="c1"># mass number near nB = 0.05 1/fm^3, Ye=0.4, and T=0.1 MeV</span>
+
+<span class="n">A_point</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">nB_grid</span><span class="p">,</span><span class="mf">0.05</span><span class="p">),</span>
+         <span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">Ye_grid</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span>
+         <span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">T_grid</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A:&#39;</span><span class="p">,</span><span class="n">A_point</span><span class="p">)</span>
+
+<span class="c1"># Now construct a slice at fixed Ye</span>
+
+<span class="n">iYe_0p4</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">Ye_grid</span><span class="p">,</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">A_slice</span><span class="o">=</span><span class="n">A</span><span class="p">[:,</span><span class="n">iYe_0p4</span><span class="p">,:]</span>
+
+<span class="c1"># Now create a simple density plot from that slice</span>
+
+<span class="k">if</span> <span class="n">plots</span><span class="p">:</span>
+    <span class="n">fig</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        
+    <span class="n">ax</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.11</span><span class="p">,</span><span class="mf">0.10</span><span class="p">,</span><span class="mf">0.90</span><span class="p">,</span><span class="mf">0.89</span><span class="p">])</span>
+    <span class="n">image</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A_slice</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                      <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">nB_grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                              <span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">nB_grid</span><span class="p">[</span><span class="n">n_nB</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+                              <span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T_grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                              <span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T_grid</span><span class="p">[</span><span class="n">n_T</span><span class="o">-</span><span class="mi">1</span><span class="p">])],</span>
+                      <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;log10 nB&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;log10 T&#39;</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="k">def</span> <span class="nf">test_fun</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">A_point</span><span class="p">,</span><span class="mf">337.5</span><span class="p">,</span><span class="n">rtol</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">)</span>
+    <span class="k">return</span>
+
+
 </pre></div>
 </div>
 </section>
