@@ -15,7 +15,7 @@
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tables to Download" href="download.html" />
+    <link rel="next" title="Tables to download" href="download.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,28 +35,27 @@
             
   <section id="equations-of-state-for-multi-messenger-astronomy-e4mma">
 <h1>Equations of state for Multi-Messenger Astronomy (E4MMA)<a class="headerlink" href="#equations-of-state-for-multi-messenger-astronomy-e4mma" title="Link to this heading">¶</a></h1>
-<p>This C++ code constructs the equation of state of homogeneous
-nucleonic matter for use in simulations of core-collapse supernovae
-and neutron star mergers. This code was originally described in a
-paper on <a class="reference external" href="https://arxiv.org/abs/1802.09710">arxiv.org</a>. The source
-code is available on <a class="reference external" href="https://github.com/awsteiner/eos">github</a>. The
-installation of <a class="reference external" href="http://www.boost.org">Boost</a>, <a class="reference external" href="http://www.gnu.org/software/gsl">GSL</a> (versions 1.16 and later), <a class="reference external" href="http://www.hdfgroup.org">HDF5</a> (versions 1.8.14 and later), and the most
-current version of <a class="reference external" href="https://awsteiner.org/code/o2scl/index.html">O2scl</a> is required in
-order to compile the code to generate and analyze EOS tables. You do
-not need to compile the code to use the EOS tables - they can be read
-by any application which reads HDF5 files.</p>
-<p>You will need to manually edit the makefile to work with your system
-and then compile <code class="docutils literal notranslate"><span class="pre">eos_nuclei</span></code> in order to generate an EOS. The
-homogeneous matter EOS from Du et al. (2019) has a separate executable
-<code class="docutils literal notranslate"><span class="pre">eos</span></code>, which can also be compiled.</p>
+<p>This C++ code constructs the equation of state
+for use in simulations of core-collapse supernovae
+and neutron star mergers. This code is based on <a class="reference external" href="https://doi.org/10.1103/PhysRevC.99.025803">Du et al. (2019)</a>, and <a class="reference external" href="https://doi.org/10.1103/PhysRevC.105.035803">Du et al. (2022)</a>. The source code is
+available on <a class="reference external" href="https://github.com/np3m/e4mma">github</a>.</p>
+<p>You may either use one of the Docker images (see <a class="reference internal" href="docker.html#using-docker"><span class="std std-ref">Using docker</span></a>)
+or compile the code yourself. You do not need to compile the code to
+use the equation of state (EOS) tables – they can be read by any
+application which can read HDF5 files.</p>
+<p>Compiling the code requires the installation of <a class="reference external" href="http://www.boost.org">Boost</a>, <a class="reference external" href="http://www.gnu.org/software/gsl">GSL</a>
+(versions 2.0 and later), <a class="reference external" href="http://www.hdfgroup.org">HDF5</a> (versions
+1.8.14 and later), and <a class="reference external" href="https://awsteiner.org/code/o2scl/index.html">O2scl</a>. You will need to
+manually edit the makefile to work with your system and then compile
+<code class="docutils literal notranslate"><span class="pre">eos_nuclei</span></code> in order to generate an EOS.</p>
 <p>More documentation will be added as time permits.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to Download</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="download.html#feb-6-2022-first-release">Feb. 6 2022, first release</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table Format</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table format</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="table_format.html#grid">Grid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table_format.html#physical-quantities">Physical quantities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table_format.html#flags">Flags</a></li>
@@ -68,12 +67,12 @@ homogeneous matter EOS from Du et al. (2019) has a separate executable
 <li class="toctree-l2"><a class="reference internal" href="table_format.html#nuclear-masses-table">Nuclear masses table</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Using docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#reading-a-table-and-plotting-with-h5py-matplotlib">Reading a table and plotting with h5py/matplotlib</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#eos-at-a-single-point-with-nuclei">EOS at a single point with nuclei</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#eos-at-a-single-point">EOS at a single point</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#help">Help</a></li>
@@ -83,8 +82,8 @@ homogeneous matter EOS from Du et al. (2019) has a separate executable
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical Potentials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable Transformations</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable transformations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="trans.html#converting-between-nn-np-and-nb-ne">Converting between (nn,np) and (nB,ne)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trans.html#converting-between-nn-np-and-nb-ye">Converting between (nn,np) and (nB,Ye)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trans.html#converting-between-nn-np-and-nb-ye-with-muons">Converting between (nn,np) and (nB,Ye) with muons</a></li>
@@ -98,15 +97,15 @@ homogeneous matter EOS from Du et al. (2019) has a separate executable
 <li class="toctree-l2"><a class="reference internal" href="eos_nuclei.html#class-eos-nuclei">Class eos_nuclei</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other Classes</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="class_doc.html#class-eos">Class eos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class_doc.html#class-partition-func">Class partition_func</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class_doc.html#class-eos-crust-virial-v2">Class eos_crust_virial_v2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class_doc.html#class-eos-had-skyrme-ext">Class eos_had_skyrme_ext</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">How to Get Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">How to get help</a></li>
 </ul>
 </div>
 <ul class="simple">
@@ -125,25 +124,25 @@ homogeneous matter EOS from Du et al. (2019) has a separate executable
         <div class="sphinxsidebarwrapper">
 <h3><a href="#">Table of Contents</a></h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to Download</a></li>
-<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table Format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Using Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Using docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical Potentials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable transformations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cs2.html">Speed of sound in a multicomponent system</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">How to Get Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">How to get help</a></li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="download.html" title="next chapter">Tables to Download</a></li>
+      <li>Next: <a href="download.html" title="next chapter">Tables to download</a></li>
   </ul></li>
 </ul>
 </div>

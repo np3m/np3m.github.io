@@ -1,4 +1,4 @@
-Using Docker
+Using docker
 ============
 
 Docker images are periodically updated which contain a working version

@@ -1,4 +1,4 @@
-Chemical Potentials
+Chemical potentials
 ===================
 
 Here, we explain the ambiguities associated with the definition of

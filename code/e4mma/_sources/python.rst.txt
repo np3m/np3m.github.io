@@ -1,4 +1,4 @@
-Python/Jupyter Examples
+Python/Jupyter examples
 =======================
 
 Reading a table and plotting with h5py/matplotlib
