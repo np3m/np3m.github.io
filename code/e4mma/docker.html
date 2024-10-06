@@ -37,13 +37,13 @@
 <h1>Using Docker<a class="headerlink" href="#using-docker" title="Link to this heading">¶</a></h1>
 <p>Docker images are periodically updated which contain a working version
 of the code and examples. These images are large, but they contain a
-full version of E4MMA together with O2scl, O2sclpy, and Jupyter. TO
+full version of E4MMA together with O2scl, O2sclpy, and Jupyter. To
 use the images (available at
 <a class="reference external" href="https://hub.docker.com/repository/docker/awsteiner/e4mma/general">https://hub.docker.com/repository/docker/awsteiner/e4mma/general</a>),
-you can try:</p>
+you can try, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo docker pull awsteiner/e4mma:alpha5_ju_o930a4_u24.04
-sudo docker run -p 8888:8888 -it `sudo docker images | \
-  grep &quot;alpha5_ju_o930a4_u24.04&quot; | awk &#39;{print $3}&#39;`
+sudo docker run -p 8888:8888 -it \
+  `sudo docker images | grep &quot;alpha5_ju_o930a4_u24.04&quot; | awk &#39;{print $3}&#39;`
 </pre></div>
 </div>
 <p>Then, inside the docker image, you can either run the code directly:</p>
@@ -55,11 +55,11 @@ sudo docker run -p 8888:8888 -it `sudo docker images | \
 <span class="o">./</span><span class="n">A_point_nuc</span><span class="o">.</span><span class="n">scr</span>
 </pre></div>
 </div>
-<p>or start a jupyter server:</p>
+<p>or start a Jupyter server:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">docker</span><span class="o">/</span><span class="n">start_server</span>
 </pre></div>
 </div>
-<p>and then you can start a jupyter notebook using the link specified by
+<p>and then you can start a Jupyter notebook using the link specified by
 the server log.</p>
 </section>
 
@@ -77,14 +77,13 @@ the server log.</p>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical Potentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trans.html">Variable Transformations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cs2.html">Speed of sound in a multicomponent system</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting with o2graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">How to Get Help</a></li>
 </ul>
 <div class="relations">

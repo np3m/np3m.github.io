@@ -30,14 +30,13 @@ More documentation will be added as time permits.
    docker
    python
    examples
-   eos_nuclei
-   class_doc
-   todos
    rest_mass
    chem_pot
    trans
    cs2
-   plotting
+   eos_nuclei
+   class_doc
+   todos
    issues
 
 * :ref:`genindex`
