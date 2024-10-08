@@ -4,7 +4,7 @@ help:
 	@echo "pubs: Create 'publications.html' from the keys in  "
 	@echo "      referee_pub_keys.txt."
 
-2pubs: empty
+pubs: empty
 	fillbib list `cat referee_pub_keys.txt` > referee_pub.bib
 	cat header.html > ../publications.html
 	btmanip -p referee_pub.bib -html list pubs.html
