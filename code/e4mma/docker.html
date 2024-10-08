@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using docker &#8212; eos  documentation</title>
+    <title>Using Docker &#8212; eos  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -34,13 +34,14 @@
           <div class="body" role="main">
             
   <section id="using-docker">
-<h1>Using docker<a class="headerlink" href="#using-docker" title="Link to this heading">¶</a></h1>
+<h1>Using Docker<a class="headerlink" href="#using-docker" title="Link to this heading">¶</a></h1>
 <p>Docker images are periodically updated which contain a working version
 of the code and examples. These images are large, but they contain a
-full version of E4MMA together with O2scl, O2sclpy, and Jupyter. To
-use the images (available at
-<a class="reference external" href="https://hub.docker.com/repository/docker/awsteiner/e4mma/general">https://hub.docker.com/repository/docker/awsteiner/e4mma/general</a>),
-you can try, for example:</p>
+full version of E4MMA together with O2scl, O2sclpy, Scipy, Matplotlib,
+and Jupyter (Scikit-learn, Tensorflow, and PyTorch are also included).
+To use the images (available at
+<a class="reference external" href="https://hub.docker.com/repository/docker/awsteiner/e4mma/general">https://hub.docker.com/repository/docker/awsteiner/e4mma/general</a>), you
+can try, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo docker pull awsteiner/e4mma:alpha5_ju_o930a4_u24.04
 sudo docker run -p 8888:8888 -it \
   `sudo docker images | grep &quot;alpha5_ju_o930a4_u24.04&quot; | awk &#39;{print $3}&#39;`
@@ -74,9 +75,10 @@ the server log.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="download.html">Tables to download</a></li>
 <li class="toctree-l1"><a class="reference internal" href="table_format.html">Table format</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html">Compiling E4MMA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical potentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trans.html">Variable transformations</a></li>
