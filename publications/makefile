@@ -1,8 +1,10 @@
 help:
-	@echo "makefile targets"
-	@echo "pubs: "
+	@echo "Makefile targets"
+	@echo "---------------------------------------------------"
+	@echo "pubs: Create 'publications.html' from the keys in  "
+	@echo "      referee_pub_keys.txt."
 
-pubs: empty
+2pubs: empty
 	fillbib list `cat referee_pub_keys.txt` > referee_pub.bib
 	cat header.html > ../publications.html
 	btmanip -p referee_pub.bib -html list pubs.html
