@@ -42,12 +42,8 @@ available on <a class="reference external" href="https://github.com/np3m/e4mma">
 <p>You may either use one of the Docker images (see <a class="reference internal" href="docker.html#using-docker"><span class="std std-ref">Using docker</span></a>)
 or compile the code yourself. You do not need to compile the code to
 use the equation of state (EOS) tables – they can be read by any
-application which can read HDF5 files.</p>
-<p>Compiling the code requires the installation of <a class="reference external" href="http://www.boost.org">Boost</a>, <a class="reference external" href="http://www.gnu.org/software/gsl">GSL</a>
-(versions 2.0 and later), <a class="reference external" href="http://www.hdfgroup.org">HDF5</a> (versions
-1.8.14 and later), and <a class="reference external" href="https://awsteiner.org/code/o2scl/index.html">O2scl</a>. You will need to
-manually edit the makefile to work with your system and then compile
-<code class="docutils literal notranslate"><span class="pre">eos_nuclei</span></code> in order to generate an EOS.</p>
+application which can read HDF5 files. For more information on
+compiling the code, see <a class="reference internal" href="compile.html#compiling-e4mma"><span class="std std-ref">Compiling E4MMA</span></a>.</p>
 <p>More documentation will be added as time permits.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -79,6 +75,10 @@ manually edit the makefile to work with your system and then compile
 <li class="toctree-l2"><a class="reference internal" href="examples.html#small-table">Small table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#small-table-with-derivatives">Small table with derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#single-point-or-small-table-with-more-detail">Single point or small table with more detail</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html">Compiling E4MMA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compile.html#e4mma-alpha-5">E4MMA Alpha 5</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
@@ -129,6 +129,7 @@ manually edit the makefile to work with your system and then compile
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Using docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html">Compiling E4MMA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical potentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trans.html">Variable transformations</a></li>
