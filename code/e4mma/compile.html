@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Compiling E4MMA &#8212; eos  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Rest mass contribution" href="rest_mass.html" />
+    <link rel="prev" title="Command-line examples" href="examples.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="compiling-e4mma">
+<h1>Compiling E4MMA<a class="headerlink" href="#compiling-e4mma" title="Link to this heading">¶</a></h1>
+<p>Compiling the code requires the installation of <a class="reference external" href="http://www.boost.org">Boost</a>, <a class="reference external" href="http://www.gnu.org/software/gsl">GSL</a>
+(versions 2.0 and later), <a class="reference external" href="http://www.hdfgroup.org">HDF5</a>, and
+<a class="reference external" href="https://awsteiner.org/code/o2scl/index.html">O2scl</a>. You will need
+to manually edit the makefile to work with your system and then
+compile <code class="docutils literal notranslate"><span class="pre">eos_nuclei</span></code> in order to generate an EOS.</p>
+<p>Alpha versions of E4MMA are currently built around specific versions
+of O2scl/O2sclpy and commits from the <code class="docutils literal notranslate"><span class="pre">andrew</span></code> branch of E4MMA.</p>
+<section id="e4mma-alpha-5">
+<h2>E4MMA Alpha 5<a class="headerlink" href="#e4mma-alpha-5" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>O2scl/py v0.930a4 (based on docker file <a class="reference external" href="https://github.com/awsteiner/o2scl/blob/dev/docker/v0.930a4_u24.04_py">v0.930a4_u24.04_py</a>)
+and E4MMA commit <a class="reference external" href="https://github.com/np3m/e4mma/commit/b4ea4a7c3d3abca43dee51d3763f14c4ff465796">b4ea4a7c</a>.
+See E4MMA docker file <a class="reference external" href="https://github.com/np3m/e4mma/blob/andrew/docker/alpha5_ju_o930a4_u24.04">alpha5_ju_o0930a4_u24.04</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Using docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python/Jupyter examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compiling E4MMA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#e4mma-alpha-5">E4MMA Alpha 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cs2.html">Speed of sound in a multicomponent system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">How to get help</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="examples.html" title="previous chapter">Command-line examples</a></li>
+      <li>Next: <a href="rest_mass.html" title="next chapter">Rest mass contribution</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2017-2024, Xingfu Du, Zidu Lin, Satyajit Roy, Josue Bautista, and Andrew W. Steiner.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/compile.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
