@@ -39,29 +39,39 @@
 of the code and examples. These images are large, but they contain a
 full version of E4MMA together with O2scl, O2sclpy, Scipy, Matplotlib,
 and Jupyter (Scikit-learn, Tensorflow, and PyTorch are also included).
-To use the images (available at
-<a class="reference external" href="https://hub.docker.com/repository/docker/awsteiner/e4mma/general">https://hub.docker.com/repository/docker/awsteiner/e4mma/general</a>), you
-can try, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo docker pull awsteiner/e4mma:alpha5_ju_o930a4_u24.04
-sudo docker run -p 8888:8888 -it \
-  `sudo docker images | grep &quot;alpha5_ju_o930a4_u24.04&quot; | awk &#39;{print $3}&#39;`
+To use the images (available at the <a class="reference external" href="https://hub.docker.com/repository/docker/awsteiner/e4mma/general">E4MMA docker repository</a>),
+you can try, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">pull</span> <span class="n">awsteiner</span><span class="o">/</span><span class="n">e4mma</span><span class="p">:</span><span class="n">alpha5_ju_o930a4_u24</span><span class="mf">.04</span>
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="o">-</span><span class="n">it</span> <span class="n">awsteiner</span><span class="o">/</span><span class="n">e4mma</span><span class="p">:</span><span class="n">alpha5_ju_o930a4_u24</span><span class="mf">.04</span>
 </pre></div>
 </div>
 <p>Then, inside the docker image, you can either run the code directly:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">eos_nuclei</span> <span class="o">-</span><span class="n">help</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">np3m</span><span class="o">/</span><span class="n">e4mma</span><span class="o">/</span><span class="n">eos_nuclei</span> <span class="o">-</span><span class="n">help</span>
 </pre></div>
 </div>
 <p>run the examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">np3m</span><span class="o">/</span><span class="n">e4mma</span><span class="o">/</span><span class="n">examples</span>
 <span class="o">./</span><span class="n">A_point_nuc</span><span class="o">.</span><span class="n">scr</span>
 </pre></div>
 </div>
 <p>or start a Jupyter server:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">docker</span><span class="o">/</span><span class="n">start_server</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">np3m</span><span class="o">/</span><span class="n">e4mma</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">start_server</span>
 </pre></div>
 </div>
 <p>and then you can start a Jupyter notebook using the link specified by
-the server log.</p>
+the server log. If you want to transfer files between the docker
+container and your directory on the host machine, you can try a
+“bind mount”, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="o">--</span><span class="n">mount</span> \
+<span class="nb">type</span><span class="o">=</span><span class="n">bind</span><span class="p">,</span><span class="n">source</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">on</span><span class="o">/</span><span class="n">host</span><span class="p">,</span><span class="n">target</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">np3m</span><span class="o">/</span><span class="n">e4mma</span><span class="o">/</span><span class="n">mounted_dir</span> \
+<span class="o">-</span><span class="n">it</span> <span class="n">awsteiner</span><span class="o">/</span><span class="n">e4mma</span><span class="p">:</span><span class="n">alpha5_ju_o930a4_u24</span><span class="mf">.04</span>
+</pre></div>
+</div>
+<p>To get more information about how bind mounts work in docker, see
+<a class="reference external" href="https://docs.docker.com/engine/storage/bind-mounts/">this page</a>.
+Keep in mind, inside the container, you will need to use <code class="docutils literal notranslate"><span class="pre">sudo</span></code> to
+create or modify files in the bound directory (no superuser password
+is needed).</p>
 </section>
 
 
