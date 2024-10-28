@@ -1,7 +1,4 @@
-Suleiman:2024jaf
-Davis:2024nda
 LIGOScientific:2024elc
-Suleiman:2024ztn
 Bandopadhyay:2024zrr
 Brandes:2024vhw
 Koehn:2024set
@@ -9,6 +6,7 @@ Chamseddine:2023voh
 Cook:2023bag
 Coupechoux:2023fqq
 Curtis:2023zfo
+Davis:2024nda
 Espino:2023dei
 Farrell:2023ojk
 Fields:2023bhs
@@ -24,6 +22,8 @@ Rodriguez:2023nay
 Rougemont:2023gfz
 Somasundaram:2023sup
 Suleiman:2023bdf
+Suleiman:2024jaf
+Suleiman:2024ztn
 Tsang:2023vhh
 Ujevic:2023vmo
 Bandopadhyay:2022tbi
