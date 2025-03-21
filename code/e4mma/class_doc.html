@@ -172,8 +172,8 @@
 <span id="_CPPv3N3eos10nstar_highE"></span><span id="_CPPv2N3eos10nstar_highE"></span><span id="eos::nstar_high__o2scl::table_units"></span><span class="target" id="classeos_1a1c01578a14c275ee7f32cd0cd069e9d9"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/table_units.html#_CPPv4I0EN5o2scl11table_unitsE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">table_units</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nstar_high</span></span></span><a class="headerlink" href="#_CPPv4N3eos10nstar_highE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Table for the high-density neutron matter EOS, which comes from the neutron star observations. </p>
 <p>This object is set in <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a>, which is called by <a class="reference internal" href="#classeos_1ad04fd554e7b636c75c0804cb775130c6"><span class="std std-ref">select_seven()</span></a>.</p>
-<p>The original posteriors are in columns “nb” and “EoA”. The column “Eerr” contains the uncertainties for the fit. The fit is stored in the columns “EoA_fit”, “ed_fit”, “mu_fit”, and “cs2_fit”. The columns “ed_fit” and “mu_fit” both include the rest mass contribution. The columns “ed”, “mu”, “dmudn” and “cs2” are computed directly from the original posteriors. Again, the columns “ed” and “mu” both include the rest mass contribution.</p>
-<p>The maximum baryon density in this table is the value “nb_max”, as obtained from the original posterior data value. </p>
+<p>The original posteriors are in columns <code class="docutils literal notranslate"><span class="pre">nb</span></code> and <code class="docutils literal notranslate"><span class="pre">EoA</span></code>. The column <code class="docutils literal notranslate"><span class="pre">Eerr</span></code> contains the uncertainties for the fit. The fit is stored in the columns <code class="docutils literal notranslate"><span class="pre">EoA_fit</span></code>, <code class="docutils literal notranslate"><span class="pre">ed_fit</span></code>, <code class="docutils literal notranslate"><span class="pre">mu_fit</span></code>, and <code class="docutils literal notranslate"><span class="pre">cs2_fit</span></code>. The columns <code class="docutils literal notranslate"><span class="pre">ed_fit</span></code> and <code class="docutils literal notranslate"><span class="pre">mu_fit</span></code> both include the rest mass contribution. The columns <code class="docutils literal notranslate"><span class="pre">ed</span></code>, <code class="docutils literal notranslate"><span class="pre">mu</span></code>, <code class="docutils literal notranslate"><span class="pre">dmudn</span></code> and <code class="docutils literal notranslate"><span class="pre">cs2</span></code> are computed directly from the original posteriors. Again, the columns <code class="docutils literal notranslate"><span class="pre">ed</span></code> and <code class="docutils literal notranslate"><span class="pre">mu</span></code> both include the rest mass contribution.</p>
+<p>The maximum baryon density in this table is the value <code class="docutils literal notranslate"><span class="pre">nb_max</span></code>, as obtained from the original posterior data value. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -192,6 +192,18 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3eos3rngE">
 <span id="_CPPv3N3eos3rngE"></span><span id="_CPPv2N3eos3rngE"></span><span id="eos::rng__o2scl::rng"></span><span class="target" id="classeos_1a0b14a8f3c4f4675cc67626a5db20ec14"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/rng.html#_CPPv4I0EN5o2scl3rngE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">rng</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rng</span></span></span><a class="headerlink" href="#_CPPv4N3eos3rngE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Random number generator. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos10rmf_fieldsE">
+<span id="_CPPv3N3eos10rmf_fieldsE"></span><span id="_CPPv2N3eos10rmf_fieldsE"></span><span id="eos::rmf_fields__b"></span><span class="target" id="classeos_1a06ea10ebf76e95b729bc34d5edb59427"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rmf_fields</span></span></span><a class="headerlink" href="#_CPPv4N3eos10rmf_fieldsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>If true, then RMF fields are included. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos8alt_nameE">
+<span id="_CPPv3N3eos8alt_nameE"></span><span id="_CPPv2N3eos8alt_nameE"></span><span id="eos::alt_name__ss"></span><span class="target" id="classeos_1a72b86f7d53fc7dd3947c556f7fa0d3b9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alt_name</span></span></span><a class="headerlink" href="#_CPPv4N3eos8alt_nameE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Name of the alternate EOS. </p>
 </dd></dl>
 
 </div>
@@ -243,25 +255,6 @@
 <p>This quantity is determined by <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a></p>
 </dd></dl>
 
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos10nuc_nb_maxE">
-<span id="_CPPv3N3eos10nuc_nb_maxE"></span><span id="_CPPv2N3eos10nuc_nb_maxE"></span><span id="eos::nuc_nb_max__double"></span><span class="target" id="classeos_1a4190f980f46f5ba402b7484297b04805"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuc_nb_max</span></span></span><a class="headerlink" href="#_CPPv4N3eos10nuc_nb_maxE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The maximum baryon density at which the nuclear matter EOS is causal. </p>
-<p>This quantity is determined by <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a></p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos10e_nuc_lastE">
-<span id="_CPPv3N3eos10e_nuc_lastE"></span><span id="_CPPv2N3eos10e_nuc_lastE"></span><span id="eos::e_nuc_last__double"></span><span class="target" id="classeos_1a0ccce21bf0639b074002c0f05a1f3023"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">e_nuc_last</span></span></span><a class="headerlink" href="#_CPPv4N3eos10e_nuc_lastE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The last energy density at which nuclear matter is causal. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos10p_nuc_lastE">
-<span id="_CPPv3N3eos10p_nuc_lastE"></span><span id="_CPPv2N3eos10p_nuc_lastE"></span><span id="eos::p_nuc_last__double"></span><span class="target" id="classeos_1add78579a3ffb7fa11eb0c770fda7567c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nuc_last</span></span></span><a class="headerlink" href="#_CPPv4N3eos10p_nuc_lastE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The last pressure at which nuclear matter is causal. </p>
-</dd></dl>
-
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos17energy_density_nsEd">
 <span id="_CPPv3N3eos17energy_density_nsEd"></span><span id="_CPPv2N3eos17energy_density_nsEd"></span><span id="eos::energy_density_ns__double"></span><span class="target" id="classeos_1a56066be90d4464ee499c2ed326d5b6b5"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">energy_density_ns</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nn</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos17energy_density_nsEd" title="Link to this definition">¶</a><br /></dt>
@@ -283,7 +276,11 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3eos13ed_fit_norestEd">
 <span id="_CPPv3N3eos13ed_fit_norestEd"></span><span id="_CPPv2N3eos13ed_fit_norestEd"></span><span id="eos::ed_fit_norest__double"></span><span class="target" id="classeos_1a89aed0d4d03f5090650fda6d3072b41d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ed_fit_norest</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos13ed_fit_norestEd" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The energy density (in <span class="math notranslate nohighlight">\( \mathrm{fm}^{-4} \)</span> ) as a function of baryon density (in <span class="math notranslate nohighlight">\( \mathrm{fm}^{-3} \)</span> ) </p>
-<p>Note this function does not include the rest mass energy density for the nucleons. </p>
+<p>Note this function does not include the rest mass energy density for the nucleons.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently this function just returns the result of <a class="reference internal" href="#classeos_1a7ea14982214528c766ec361401684e24"><span class="std std-ref">fit_fun()</span></a>, using the parameters stored in ns_fit_params. </p>
+</div>
 </dd></dl>
 
 <dl class="cpp function">
@@ -317,6 +314,43 @@
 \mathrm{fm}^{-1} \)</span> ) as a function of number density (in <span class="math notranslate nohighlight">\(
 \mathrm{fm}^{-3} \)</span> ) </p>
 <p>Note this function does not include the rest mass for the nucleons. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-modified-nuclear-matter-eos-[protected]">Modified nuclear matter EOS [protected]</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos10nuc_nb_maxE">
+<span id="_CPPv3N3eos10nuc_nb_maxE"></span><span id="_CPPv2N3eos10nuc_nb_maxE"></span><span id="eos::nuc_nb_max__double"></span><span class="target" id="classeos_1a4190f980f46f5ba402b7484297b04805"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuc_nb_max</span></span></span><a class="headerlink" href="#_CPPv4N3eos10nuc_nb_maxE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The maximum baryon density at which the nuclear matter EOS is causal. </p>
+<p>This quantity is determined by <a class="reference internal" href="#classeos_1ae02ba6f3224e7ae56586f9aca94f5c87"><span class="std std-ref">ns_fit()</span></a></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos10e_nuc_lastE">
+<span id="_CPPv3N3eos10e_nuc_lastE"></span><span id="_CPPv2N3eos10e_nuc_lastE"></span><span id="eos::e_nuc_last__double"></span><span class="target" id="classeos_1a0ccce21bf0639b074002c0f05a1f3023"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">e_nuc_last</span></span></span><a class="headerlink" href="#_CPPv4N3eos10e_nuc_lastE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The last energy density at which nuclear matter is causal. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos10p_nuc_lastE">
+<span id="_CPPv3N3eos10p_nuc_lastE"></span><span id="_CPPv2N3eos10p_nuc_lastE"></span><span id="eos::p_nuc_last__double"></span><span class="target" id="classeos_1add78579a3ffb7fa11eb0c770fda7567c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nuc_last</span></span></span><a class="headerlink" href="#_CPPv4N3eos10p_nuc_lastE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The last pressure at which nuclear matter is causal. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos11new_nuc_eosEdRdRdRd">
+<span id="_CPPv3N3eos11new_nuc_eosEdRdRdRd"></span><span id="_CPPv2N3eos11new_nuc_eosEdRdRdRd"></span><span id="eos::new_nuc_eos__double.doubleR.doubleR.doubleR"></span><span class="target" id="classeos_1a78bf38c0a8debe0d1e02c8078db1a008"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">new_nuc_eos</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e_nuc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mun</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mup</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos11new_nuc_eosEdRdRdRd" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Construct a new nuclear matter EOS which ensures causality at high densities. </p>
+<p>Given the input baryon density in <code class="docutils literal notranslate"><span class="pre">nb</span></code> in units of <span class="math notranslate nohighlight">\(
+1/\mathrm{fm}^{3} \)</span>, this returns the energy density of nuclear matter in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{4} \)</span> in <code class="docutils literal notranslate"><span class="pre">e_nuc</span></code> and the derivative with respect to the density in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{3} \)</span> in <code class="docutils literal notranslate"><span class="pre">denucdnn</span></code>.</p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Todo:</span></em></dt>
+<dd><p>This function isn’t yet implemented in the code because I haven’t yet disentangled how to get the neutron ahd proton chemical potentials from denucdnb. </p>
+</dd></dl>
+
+</p>
 </dd></dl>
 
 </div>
@@ -363,6 +397,26 @@
 <dd></dd></dl>
 
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos11p_cs2_extraE">
+<span id="_CPPv3N3eos11p_cs2_extraE"></span><span id="_CPPv2N3eos11p_cs2_extraE"></span><span id="eos::p_cs2_extra__o2scl::cli::parameter_double"></span><span class="target" id="classeos_1a5ebfbf0cc7edd92e81d27b6f1b40704a"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cliE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">cli</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cli16parameter_doubleE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">parameter_double</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_cs2_extra</span></span></span><a class="headerlink" href="#_CPPv4N3eos11p_cs2_extraE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos8p_nuc_c0E">
+<span id="_CPPv3N3eos8p_nuc_c0E"></span><span id="_CPPv2N3eos8p_nuc_c0E"></span><span id="eos::p_nuc_c0__o2scl::cli::parameter_double"></span><span class="target" id="classeos_1a5dd3134bf3d1c075a7a1d056157ff8d1"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cliE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">cli</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cli16parameter_doubleE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">parameter_double</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nuc_c0</span></span></span><a class="headerlink" href="#_CPPv4N3eos8p_nuc_c0E" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos8p_nuc_c1E">
+<span id="_CPPv3N3eos8p_nuc_c1E"></span><span id="_CPPv2N3eos8p_nuc_c1E"></span><span id="eos::p_nuc_c1__o2scl::cli::parameter_double"></span><span class="target" id="classeos_1ad5193c777f7fe8e57bd84970398cf1d8"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cliE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">cli</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cli16parameter_doubleE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">parameter_double</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nuc_c1</span></span></span><a class="headerlink" href="#_CPPv4N3eos8p_nuc_c1E" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos8p_nuc_c2E">
+<span id="_CPPv3N3eos8p_nuc_c2E"></span><span id="_CPPv2N3eos8p_nuc_c2E"></span><span id="eos::p_nuc_c2__o2scl::cli::parameter_double"></span><span class="target" id="classeos_1a63f2ccad8105fdb813477a73f01cb52f"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cliE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">cli</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cli16parameter_doubleE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">parameter_double</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nuc_c2</span></span></span><a class="headerlink" href="#_CPPv4N3eos8p_nuc_c2E" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos13p_cs2_verboseE">
 <span id="_CPPv3N3eos13p_cs2_verboseE"></span><span id="_CPPv2N3eos13p_cs2_verboseE"></span><span id="eos::p_cs2_verbose__o2scl::cli::parameter_int"></span><span class="target" id="classeos_1acf1b28d38c2c6e41c9c88ccd0b3972d5"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cliE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">cli</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cli13parameter_intE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">parameter_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_cs2_verbose</span></span></span><a class="headerlink" href="#_CPPv4N3eos13p_cs2_verboseE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -397,21 +451,9 @@
 <span id="_CPPv3N3eos16p_nucstruct_fileE"></span><span id="_CPPv2N3eos16p_nucstruct_fileE"></span><span id="eos::p_nucstruct_file__o2scl::cli::parameter_string"></span><span class="target" id="classeos_1a7d4745d5b6b94d66eaa64e50ab86e9e7"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cliE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">cli</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/cli.html#_CPPv4N5o2scl3cli16parameter_stringE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">parameter_string</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">p_nucstruct_file</span></span></span><a class="headerlink" href="#_CPPv4N3eos16p_nucstruct_fileE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos10rmf_fieldsE">
-<span id="_CPPv3N3eos10rmf_fieldsE"></span><span id="_CPPv2N3eos10rmf_fieldsE"></span><span id="eos::rmf_fields__b"></span><span class="target" id="classeos_1a06ea10ebf76e95b729bc34d5edb59427"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rmf_fields</span></span></span><a class="headerlink" href="#_CPPv4N3eos10rmf_fieldsE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>If true, then RMF fields are included. </p>
-</dd></dl>
-
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-particle-objects-[protected]">Particle objects [protected]</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos4elepE">
-<span id="_CPPv3N3eos4elepE"></span><span id="_CPPv2N3eos4elepE"></span><span id="eos::elep__o2scl::eos_leptons_multip"></span><span class="target" id="classeos_1aa8ce64f05ee56618f159946fd07b10d3"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/eos_leptons_multip.html#_CPPv4N5o2scl18eos_leptons_multipE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">eos_leptons_multip</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elep</span></span></span><a class="headerlink" href="#_CPPv4N3eos4elepE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>New lepton object. </p>
-</dd></dl>
-
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos8electronE">
 <span id="_CPPv3N3eos8electronE"></span><span id="_CPPv2N3eos8electronE"></span><span id="eos::electron__o2scl::fermion"></span><span class="target" id="classeos_1a7d08a8fedcc33b7789cd889f30aff342"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">fermion</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">electron</span></span></span><a class="headerlink" href="#_CPPv4N3eos8electronE" title="Link to this definition">¶</a><br /></dt>
@@ -543,6 +585,30 @@
 <dd><p>File containing nuclear structure parameterizations. </p>
 </dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos9cs2_extraE">
+<span id="_CPPv3N3eos9cs2_extraE"></span><span id="_CPPv2N3eos9cs2_extraE"></span><span id="eos::cs2_extra__double"></span><span class="target" id="classeos_1a10edd9948520678922d4b3a5e7aaee83"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cs2_extra</span></span></span><a class="headerlink" href="#_CPPv4N3eos9cs2_extraE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Extra factor in density for the sound speed correction in neutron matter. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos6nuc_c0E">
+<span id="_CPPv3N3eos6nuc_c0E"></span><span id="_CPPv2N3eos6nuc_c0E"></span><span id="eos::nuc_c0__double"></span><span class="target" id="classeos_1aaa5deb74ab8deb6a9e3dfeb7b44b65c1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuc_c0</span></span></span><a class="headerlink" href="#_CPPv4N3eos6nuc_c0E" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Coefficient for correction for sound speed in nuclear matter (in <span class="math notranslate nohighlight">\( \mathrm{MeV}/\mathrm{fm}^3 \)</span>) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos6nuc_c1E">
+<span id="_CPPv3N3eos6nuc_c1E"></span><span id="_CPPv2N3eos6nuc_c1E"></span><span id="eos::nuc_c1__double"></span><span class="target" id="classeos_1ac70462ff19c075af57ba6c0126298bcc"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuc_c1</span></span></span><a class="headerlink" href="#_CPPv4N3eos6nuc_c1E" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Width factor for correction for sound speed in nuclear matter. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos6nuc_c2E">
+<span id="_CPPv3N3eos6nuc_c2E"></span><span id="_CPPv2N3eos6nuc_c2E"></span><span id="eos::nuc_c2__double"></span><span class="target" id="classeos_1a9246c37cadad8ee00aadd973ca348105"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuc_c2</span></span></span><a class="headerlink" href="#_CPPv4N3eos6nuc_c2E" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Baryon density for correction for sound speed in nuclear matter (in <span class="math notranslate nohighlight">\( \mathrm{fm}^{-3} \)</span>) </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-base-physics-objects-[protected]">Base physics objects [protected]</p>
@@ -619,9 +685,9 @@
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos8alt_nameE">
-<span id="_CPPv3N3eos8alt_nameE"></span><span id="_CPPv2N3eos8alt_nameE"></span><span id="eos::alt_name__ss"></span><span class="target" id="classeos_1a72b86f7d53fc7dd3947c556f7fa0d3b9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alt_name</span></span></span><a class="headerlink" href="#_CPPv4N3eos8alt_nameE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Name of the alternate EOS. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N3eos4elepE">
+<span id="_CPPv3N3eos4elepE"></span><span id="_CPPv2N3eos4elepE"></span><span id="eos::elep__o2scl::eos_leptons_multip"></span><span class="target" id="classeos_1aa8ce64f05ee56618f159946fd07b10d3"></span><span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><a class="reference external" href="https://awsteiner.org/code/o2scl/html/class/eos_leptons_multip.html#_CPPv4N5o2scl18eos_leptons_multipE" title="(in o2scl v0.931a1)"><span class="n"><span class="pre">eos_leptons_multip</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elep</span></span></span><a class="headerlink" href="#_CPPv4N3eos4elepE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>New lepton object. </p>
 </dd></dl>
 
 </div>
@@ -743,15 +809,8 @@
 <span id="_CPPv3N3eos10new_ns_eosEdRN5o2scl7fermionERdRd"></span><span id="_CPPv2N3eos10new_ns_eosEdRN5o2scl7fermionERdRd"></span><span id="eos::new_ns_eos__double.o2scl::fermionR.doubleR.doubleR"></span><span class="target" id="classeos_1a1363b6b6d6cb43829b672e35a2434832"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">new_ns_eos</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb</span></span>, <span class="n"><span class="pre">o2scl</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">fermion</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">n</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e_ns</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">densdnn</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos10new_ns_eosEdRN5o2scl7fermionERdRd" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Construct a new neutron star EOS which ensures causality at high densities. </p>
 <p>Given the input baryon density in <code class="docutils literal notranslate"><span class="pre">nb</span></code> in units of <span class="math notranslate nohighlight">\(
-1/\mathrm{fm}^{3} \)</span>, this returns the energy density of neutron star matter in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{4} \)</span> in <code class="docutils literal notranslate"><span class="pre">e_ns</span></code> and the derivative with respect to the density in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{3} \)</span> in <code class="docutils literal notranslate"><span class="pre">densdnn</span></code>. The rest mass contribution is not included in either <code class="docutils literal notranslate"><span class="pre">e_ns</span></code> or <code class="docutils literal notranslate"><span class="pre">densdnn</span></code>. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos11new_nuc_eosEdRdRd">
-<span id="_CPPv3N3eos11new_nuc_eosEdRdRd"></span><span id="_CPPv2N3eos11new_nuc_eosEdRdRd"></span><span id="eos::new_nuc_eos__double.doubleR.doubleR"></span><span class="target" id="classeos_1ac642b8c2c20fd876dcf01bad301a7321"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">new_nuc_eos</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e_nuc</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">denucdnn</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos11new_nuc_eosEdRdRd" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Construct a new nuclear matter EOS which ensures causality at high densities. </p>
-<p>Given the input baryon density in <code class="docutils literal notranslate"><span class="pre">nb</span></code> in units of <span class="math notranslate nohighlight">\(
-1/\mathrm{fm}^{3} \)</span>, this returns the energy density of neutron star matter in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{4} \)</span> in <code class="docutils literal notranslate"><span class="pre">e_nuc</span></code> and the derivative with respect to the density in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{3} \)</span> in <code class="docutils literal notranslate"><span class="pre">denucdnn</span></code>. </p>
+1/\mathrm{fm}^{3} \)</span>, this returns the energy density of neutron star matter in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{4} \)</span> in <code class="docutils literal notranslate"><span class="pre">e_ns</span></code> and the derivative with respect to the density in units of <span class="math notranslate nohighlight">\( 1/\mathrm{fm}^{3} \)</span> in <code class="docutils literal notranslate"><span class="pre">densdnn</span></code>. The nucleon rest mass contribution is not included in either <code class="docutils literal notranslate"><span class="pre">e_ns</span></code> or <code class="docutils literal notranslate"><span class="pre">densdnn</span></code>.</p>
+<p>This function performs a speed of sound correction on top of the analytic fit to the neutron star data, as computed in <a class="reference internal" href="#classeos_1a7ea14982214528c766ec361401684e24"><span class="std std-ref">fit_fun()</span></a>, <a class="reference internal" href="#classeos_1a56066be90d4464ee499c2ed326d5b6b5"><span class="std std-ref">energy_density_ns()</span></a>, <a class="reference internal" href="#classeos_1a89aed0d4d03f5090650fda6d3072b41d"><span class="std std-ref">ed_fit_norest()</span></a>, and <a class="reference internal" href="#classeos_1a9dda15dcabaa9a6206c6f2a3d0ebbb20"><span class="std std-ref">mu_fit_norest()</span></a>. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -784,12 +843,6 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3eos17solve_coeff_smallE6size_tRK8ubvectorR8ubvectorddd">
 <span id="_CPPv3N3eos17solve_coeff_smallE6size_tRK8ubvectorR8ubvectorddd"></span><span id="_CPPv2N3eos17solve_coeff_smallE6size_tRK8ubvectorR8ubvectorddd"></span><span id="eos::solve_coeff_small__s.ubvectorCR.ubvectorR.double.double.double"></span><span class="target" id="classeos_1a11c54a35b13fa5c9eb3229a019d1d164"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">solve_coeff_small</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nv</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ubvector</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">ubvector</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">y</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb_last</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cs_ns_2</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cs_ns_last</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos17solve_coeff_smallE6size_tRK8ubvectorR8ubvectorddd" title="Link to this definition">¶</a><br /></dt>
 <dd><p>solve for a1 and a2 when cs_ns(2.0)&lt;cs_ns(1.28) </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3eos11select_fullERNSt6vectorINSt6stringEEEb">
-<span id="_CPPv3N3eos11select_fullERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos11select_fullERNSt6vectorINSt6stringEEEb"></span><span id="eos::select_full__std::vector:ss:R.b"></span><span class="target" id="classeos_1a76627b764f1a9b5c1b443efb62d6cab8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_full</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos11select_fullERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Experimental select function for all parameters. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -877,18 +930,26 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3eos11select_fullERNSt6vectorINSt6stringEEEb">
+<span id="_CPPv3N3eos11select_fullERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos11select_fullERNSt6vectorINSt6stringEEEb"></span><span id="eos::select_full__std::vector:ss:R.b"></span><span class="target" id="classeos_1a76627b764f1a9b5c1b443efb62d6cab8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select_full</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos11select_fullERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>More detailed delect function. </p>
+<p>&lt;p1 p2 p3 … &gt;</p>
+<p>Dec. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos8test_cs2ERNSt6vectorINSt6stringEEEb">
 <span id="_CPPv3N3eos8test_cs2ERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos8test_cs2ERNSt6vectorINSt6stringEEEb"></span><span id="eos::test_cs2__std::vector:ss:R.b"></span><span class="target" id="classeos_1ad584d517fd7a8a636a73fbb4fc981ff9"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">test_cs2</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos8test_cs2ERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Construct a full 3D EOS table without nuclei. </p>
-<p>&lt;filename&gt;</p>
-<p>This constructs a full 3D EOS table without nuclei using the specified model. The resulting file has several tensor_grid objects including Fint, Eint, Pint, Sint, mun, mup, cs2, mue, F, E, P, and S. This function does not yet support muons or strangeness. </p>
+<dd><p>Desc. </p>
+<p>(no arguments)</p>
+<p>The ‘test-cs2’ command … </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3eos10test_derivERNSt6vectorINSt6stringEEEb">
 <span id="_CPPv3N3eos10test_derivERNSt6vectorINSt6stringEEEb"></span><span id="_CPPv2N3eos10test_derivERNSt6vectorINSt6stringEEEb"></span><span id="eos::test_deriv__std::vector:ss:R.b"></span><span class="target" id="classeos_1a2c05bd84679793e7df3b7f23a92b89fb"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">test_deriv</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">itive_com</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3eos10test_derivERNSt6vectorINSt6stringEEEb" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Test the first derivatives of the free energy (no nuclei) </p>
-<p>(no parameters)</p>
+<p>(no arguments)</p>
 <p>This function tests the first derivatives of the homogeneous matter EOS without nuclei. The model must be selected before running this function. It tests derivatives over a range of densities for three temperatures and two electron fractions. </p>
 </dd></dl>
 
