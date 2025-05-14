@@ -1,12 +1,10 @@
 Qiu:2025kgy
 Perna:2024qnk
 Chiesa:2024lnu
-Rashti:2024yoc
 Cheong:2024hrd
 Bernuzzi:2024mfx
 Gutierrez:2024pch
 Fields:2024pob
-Zhu:2024utz
 Guedes:2024zkh
 Gutierrez:2024pch
 Breschi:2024qlc
@@ -16,7 +14,6 @@ Dhani:2023ijt
 Daszuta:2024ucu
 Bandyopadhyay:2023ohl
 Albanesi:2024xus
-Rashti:2023wfe
 Magistrelli:2024zmk
 Radice:2024gic
 LIGOScientific:2024elc
