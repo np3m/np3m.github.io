@@ -3,7 +3,6 @@ Perna:2024qnk
 Chiesa:2024lnu
 Cheong:2024hrd
 Bernuzzi:2024mfx
-Gutierrez:2024pch
 Fields:2024pob
 Guedes:2024zkh
 Gutierrez:2024pch
@@ -11,7 +10,6 @@ Breschi:2024qlc
 Chatziioannou:2024tjq
 Grippa:2024ppo
 Dhani:2023ijt
-Daszuta:2024ucu
 Bandyopadhyay:2023ohl
 Albanesi:2024xus
 Magistrelli:2024zmk
