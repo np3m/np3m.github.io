@@ -202,7 +202,7 @@ def build():
     today = datetime.date.today().strftime("%B %-d, %Y")
 
     main = f"""
-<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="science.html">Science</a><span>/</span>Publications</nav><p class="kicker">Science</p><h1>NP3M Publications</h1><p class="page-lead">Papers that acknowledge NSF grant {grant_list}, as listed on INSPIRE-HEP. Last updated {today}.</p></div></section>
+<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>Publications</nav><p class="kicker">About</p><h1>NP3M Publications</h1><p class="page-lead">Papers that acknowledge NSF grant {grant_list}, as listed on INSPIRE-HEP. Last updated {today}.</p></div></section>
 <div class="pillbar"><div class="wrap pills">{year_pills}</div></div>
 <section class="band"><div class="wrap">
   <div class="pub-tools">
@@ -224,10 +224,10 @@ def build():
     # mark the current page in the navigation
     out = out.replace('<li class="has-menu is-active">', '<li class="has-menu">')
     out = out.replace(' aria-current="page"', "")
-    out = out.replace('<li class="has-menu"><button class="top" aria-expanded="false">Science',
-                      '<li class="has-menu is-active"><button class="top" aria-expanded="false">Science', 1)
-    out = out.replace('<li><a href="publications.html">Publications</a></li></ul></li>',
-                      '<li><a href="publications.html" aria-current="page">Publications</a></li></ul></li>', 1)
+    out = out.replace('<li class="has-menu"><button class="top" aria-expanded="false">About',
+                      '<li class="has-menu is-active"><button class="top" aria-expanded="false">About', 1)
+    out = out.replace('<li><a href="publications.html">Publications</a></li>',
+                      '<li><a href="publications.html" aria-current="page">Publications</a></li>', 1)
     open(OUTPUT, "w", encoding="utf-8").write(out)
     print(f"Wrote {OUTPUT}: {len(records)} publications "
           + ", ".join(f"{g}: {len(by_grant[g])}" for g in GRANTS))
