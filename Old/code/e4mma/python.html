@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python/Jupyter examples &#8212; eos  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command-line examples" href="examples.html" />
+    <link rel="prev" title="Using Docker" href="docker.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="python-jupyter-examples">
+<h1>Python/Jupyter examples<a class="headerlink" href="#python-jupyter-examples" title="Link to this heading">¶</a></h1>
+<section id="reading-a-table-and-plotting-with-h5py-matplotlib">
+<h2>Reading a table and plotting with h5py/matplotlib<a class="headerlink" href="#reading-a-table-and-plotting-with-h5py-matplotlib" title="Link to this heading">¶</a></h2>
+<p>See the matching Jupyter notebook at
+<a class="reference external" href="https://github.com/np3m/e4mma/blob/andrew/python/A_plot_h5py.ipynb">https://github.com/np3m/e4mma/blob/andrew/python/A_plot_h5py.ipynb</a> .</p>
+<p>Taken from <code class="docutils literal notranslate"><span class="pre">python/A_plot_h5py.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># # E4MMA - Plotting with h5py and matplotlib</span>
+
+<span class="c1"># +</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plot</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">plots</span><span class="o">=</span><span class="kc">True</span>
+<span class="k">if</span> <span class="s1">&#39;pytest&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="n">plots</span><span class="o">=</span><span class="kc">False</span>
+<span class="c1"># -</span>
+
+<span class="c1"># Download a precomputed table. The file is compared with the SHA256</span>
+<span class="c1"># hash and only downloaded if the current file doesn&#39;t match the hash.</span>
+<span class="c1"># The &#39;acol&#39; command is part of O2scl (one of the e4mma dependencies).</span>
+<span class="c1"># Instead of acol, you can just use, e.g. &#39;curl&#39; to download the file</span>
+<span class="c1"># and &#39;openssl dgst -sha256&#39; to obtain the hash.</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">((</span><span class="s1">&#39;acol -download ../output/fid_3_5_22.o2 &#39;</span><span class="o">+</span>
+           <span class="s1">&#39;https://isospin.roam.utk.edu/public_data/&#39;</span><span class="o">+</span>
+           <span class="s1">&#39;eos_tables/du21/fid_3_5_22.o2 840f6f171f05081d&#39;</span><span class="o">+</span>
+           <span class="s1">&#39;eed53fd8bf50bad1b16a865418c37b1b630817ae10ad6736&#39;</span><span class="p">))</span>
+
+<span class="c1"># Use h5py to read the table</span>
+
+<span class="n">f</span><span class="o">=</span><span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;../output/fid_3_5_22.o2&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read the grid</span>
+
+<span class="n">n_nB</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;n_nB&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">n_Ye</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;n_Ye&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">n_T</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;n_T&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">nB_grid</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;nB_grid&quot;</span><span class="p">]</span>
+<span class="n">Ye_grid</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;Ye_grid&quot;</span><span class="p">]</span>
+<span class="n">T_grid</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;T_grid&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n_nB,n_Ye,n_T:&#39;</span><span class="p">,</span><span class="n">n_nB</span><span class="p">,</span><span class="n">n_Ye</span><span class="p">,</span><span class="n">n_T</span><span class="p">)</span>
+
+<span class="c1"># Read the data on the average nuclear mass number and reshape for</span>
+<span class="c1"># convenience</span>
+
+<span class="n">A</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;A/data&quot;</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,(</span><span class="n">n_nB</span><span class="p">,</span><span class="n">n_Ye</span><span class="p">,</span><span class="n">n_T</span><span class="p">))</span>
+
+<span class="c1"># When the grids are sorted, we can use numpy&#39;s searchsorted() function for</span>
+<span class="c1"># a fast way of mapping values to indices. This is the average nuclear</span>
+<span class="c1"># mass number near nB = 0.05 1/fm^3, Ye=0.4, and T=0.1 MeV</span>
+
+<span class="n">A_point</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">nB_grid</span><span class="p">,</span><span class="mf">0.05</span><span class="p">),</span>
+         <span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">Ye_grid</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span>
+         <span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">T_grid</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A:&#39;</span><span class="p">,</span><span class="n">A_point</span><span class="p">)</span>
+
+<span class="c1"># Now construct a slice at fixed Ye</span>
+
+<span class="n">iYe_0p4</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">Ye_grid</span><span class="p">,</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">A_slice</span><span class="o">=</span><span class="n">A</span><span class="p">[:,</span><span class="n">iYe_0p4</span><span class="p">,:]</span>
+
+<span class="c1"># Now create a simple density plot from that slice</span>
+
+<span class="k">if</span> <span class="n">plots</span><span class="p">:</span>
+    <span class="n">fig</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        
+    <span class="n">ax</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.11</span><span class="p">,</span><span class="mf">0.10</span><span class="p">,</span><span class="mf">0.90</span><span class="p">,</span><span class="mf">0.89</span><span class="p">])</span>
+    <span class="n">image</span><span class="o">=</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A_slice</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                      <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">nB_grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                              <span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">nB_grid</span><span class="p">[</span><span class="n">n_nB</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+                              <span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T_grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                              <span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T_grid</span><span class="p">[</span><span class="n">n_T</span><span class="o">-</span><span class="mi">1</span><span class="p">])],</span>
+                      <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;log10 nB&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;log10 T&#39;</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="k">def</span> <span class="nf">test_fun</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">A_point</span><span class="p">,</span><span class="mf">337.5</span><span class="p">,</span><span class="n">rtol</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">)</span>
+    <span class="k">return</span>
+
+
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="download.html">Tables to download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_format.html">Table format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Using Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python/Jupyter examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reading-a-table-and-plotting-with-h5py-matplotlib">Reading a table and plotting with h5py/matplotlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Command-line examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html">Compiling E4MMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_mass.html">Rest mass contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chem_pot.html">Chemical potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans.html">Variable transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cs2.html">Speed of sound in a multicomponent system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eos_nuclei.html">EOS generator eos_nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_doc.html">Other classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">How to get help</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="docker.html" title="previous chapter">Using Docker</a></li>
+      <li>Next: <a href="examples.html" title="next chapter">Command-line examples</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2017-2024, Xingfu Du, Zidu Lin, Satyajit Roy, Josue Bautista, and Andrew W. Steiner.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/python.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
