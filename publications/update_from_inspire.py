@@ -106,7 +106,7 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
-def entry(m, grants):
+def entry(m):
     title = strip_tags(m["titles"][0]["title"])
     arxiv = (m.get("arxiv_eprints") or [{}])[0].get("value")
     doi = (m.get("dois") or [{}])[0].get("value")
@@ -121,14 +121,13 @@ def entry(m, grants):
         links.append(f'<a class="chip" href="https://arxiv.org/abs/{esc(arxiv)}">arXiv:{esc(arxiv)}</a>')
     links.append(f'<a class="chip" href="https://inspirehep.net/literature/{recid}">INSPIRE</a>')
     status = esc(ref) if ref else '<span class="preprint">Preprint</span>'
-    tags = "".join(f'<span class="gtag">{g}</span>' for g in grants)
     search = esc(" ".join([title, authors_text(m), ref, arxiv or ""]).lower())
     return year, (
-        f'<li class="pub" data-search="{search}" data-grants="{" ".join(grants)}">'
+        f'<li class="pub" data-search="{search}">'
         f'<p class="pub-title"><a href="{esc(href)}">{esc(title)}</a></p>'
         f'<p class="pub-authors">{esc(authors_text(m))}</p>'
         f'<p class="pub-ref">{status}</p>'
-        f'<div class="pub-foot"><div class="chips">{"".join(links)}</div><div class="gtags">{tags}</div></div></li>'
+        f'<div class="pub-foot"><div class="chips">{"".join(links)}</div></div></li>'
     )
 
 
@@ -150,27 +149,25 @@ CSS = """
 .preprint { font-style: normal; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--orange); }
 .pub-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center; }
 .pub .chip { font-size: 13px; padding: 3px 11px; }
-.gtags { display: flex; gap: 6px; flex-wrap: wrap; }
-.gtag { font-size: 12px; color: var(--muted); background: var(--sand); border-radius: 4px; padding: 2px 8px; }
 .no-results { display: none; color: var(--muted); padding: 24px 0; }
 </style>"""
 
 JS = """
 <script>
 (function () {
-  var q = document.getElementById('pub-q'), g = document.getElementById('pub-g'), c = document.getElementById('pub-n');
+  var q = document.getElementById('pub-q'), c = document.getElementById('pub-n');
   var items = [].slice.call(document.querySelectorAll('.pub')), years = [].slice.call(document.querySelectorAll('.pub-year'));
   function run() {
-    var terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean), grant = g.value, n = 0;
+    var terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean), n = 0;
     items.forEach(function (li) {
-      var ok = terms.every(function (t) { return li.dataset.search.indexOf(t) > -1; }) && (!grant || li.dataset.grants.indexOf(grant) > -1);
+      var ok = terms.every(function (t) { return li.dataset.search.indexOf(t) > -1; });
       li.hidden = !ok; if (ok) n++;
     });
     years.forEach(function (y) { y.hidden = !y.querySelector('.pub:not([hidden])'); });
     c.textContent = n + (n === 1 ? ' publication' : ' publications');
     document.getElementById('pub-none').style.display = n ? 'none' : 'block';
   }
-  q.addEventListener('input', run); g.addEventListener('change', run);
+  q.addEventListener('input', run);
 })();
 </script>"""
 
@@ -187,8 +184,7 @@ def build():
 
     groups = {}
     for m in records:
-        grants = [g for g in GRANTS if m["control_number"] in by_grant[g]]
-        year, li = entry(m, grants)
+        year, li = entry(m)
         groups.setdefault(year, []).append(li)
 
     sections = "".join(
@@ -197,17 +193,13 @@ def build():
         for y in sorted(groups, reverse=True)
     )
     year_pills = "".join(f'<a href="#y{y}">{y}</a>' for y in sorted(groups, reverse=True))
-    options = "".join(f'<option value="{g}">{g}</option>' for g in GRANTS)
-    grant_list = ", ".join(GRANTS[:-1]) + " or " + GRANTS[-1]
-    today = datetime.date.today().strftime("%B %-d, %Y")
 
     main = f"""
-<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="science.html">Science</a><span>/</span>Publications</nav><p class="kicker">Science</p><h1>NP3M Publications</h1><p class="page-lead">Papers that acknowledge NSF grant {grant_list}, as listed on INSPIRE-HEP. Last updated {today}.</p></div></section>
+<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="science.html">Science</a><span>/</span>Publications</nav><p class="kicker">Science</p><h1>NP3M Publications</h1></div></section>
 <div class="pillbar"><div class="wrap pills">{year_pills}</div></div>
 <section class="band"><div class="wrap">
   <div class="pub-tools">
     <input id="pub-q" type="search" placeholder="Search titles, authors, journals&hellip;" aria-label="Search publications">
-    <select id="pub-g" aria-label="Filter by grant"><option value="">All grants</option>{options}</select>
     <p class="pub-count" id="pub-n" aria-live="polite">{len(records)} publications</p>
   </div>
   <p class="no-results" id="pub-none">No publications match your search.</p>
